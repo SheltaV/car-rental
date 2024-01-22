@@ -15,7 +15,7 @@ const adSlice = createSlice({
     setPage: (state, action) => {
       state.page = action.payload;
     },
-    setAdss: (state, action) => {
+    setAds: (state, action) => {
       state.adverts = action.payload;
     },
     appendAds: (state, action) => {
@@ -25,4 +25,4 @@ const adSlice = createSlice({
 });
 
 export const advertsReducer = adSlice.reducer;
-export const { setPage, setAdss, appendAds } = adSlice.actions;
+export const { setPage, setAds, appendAds } = adSlice.actions;

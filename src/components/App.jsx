@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
-import NotFound from 'pages/NotFound';
+import NotFound from 'Pages/NotFound';
 import { useDispatch } from 'react-redux';
 import { lazy, useEffect } from 'react';
 import { getAdverts } from '../redux/operations';

@@ -1,5 +1,5 @@
 import { Button, UnorderedList } from '@chakra-ui/react';
-import { CatalogEl } from './CatalogEl';
+import { Catalog } from './Catalog';
 import { useAd } from 'hooks/useAd';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -34,7 +34,7 @@ export const CatalogList = () => {
       mx="auto"
     >
       {adverts.map(advert => (
-        <CatalogEl
+        <Catalog
           key={advert.id}
           id={advert.id}
           img={advert.img}

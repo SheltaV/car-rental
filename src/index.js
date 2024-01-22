@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store';
 // import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
-import { theme } from 'styles/theme';
+import { theme } from 'styles/commonTheme';
 import { ChakraProvider } from '@chakra-ui/react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -4,7 +4,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
-import { theme } from 'styles/theme';
+import { theme } from 'styles/commonTheme';
 
 export const Navigation = () => {
   const linkColor = useColorModeValue(

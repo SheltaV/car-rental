@@ -9,13 +9,13 @@ import {
   Image,
   Text,
 } from '@chakra-ui/react';
-import { HeartIcon } from './HeartIcon';
+import { IconHeart } from './IconHeart';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { toggleLikedAd } from '../redux/favoritesSlice';
+import { toggleLikedAd } from '../redux/favoriteSlice';
 import { ModalWindow } from './Modal';
 
-export const CatalogEl = ({ advert }) => {
+export const Catalog = ({ advert }) => {
   const dispatch = useDispatch();
   const isAdLiked = useSelector(state =>
     state.favorites.likedAds.includes(advert.id)
@@ -30,7 +30,7 @@ export const CatalogEl = ({ advert }) => {
     }
 
     return () => {
-      document.body.style.overflow = 'auto'; // Восстанавливаем overflow при размонтировании
+      document.body.style.overflow = 'auto';
     };
   }, [isModalOpen]);
   const handleHeartToggle = () => {
@@ -53,7 +53,7 @@ export const CatalogEl = ({ advert }) => {
         height: '426px',
       }}
     >
-      <HeartIcon
+      <IconHeart
         adId={advert.id}
         onToggle={handleHeartToggle}
         isLiked={isAdLiked}
