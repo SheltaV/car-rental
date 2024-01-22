@@ -5,9 +5,9 @@ import { useDispatch } from 'react-redux';
 import { lazy, useEffect } from 'react';
 import { getAdverts } from '../redux/operations';
 
-const Home = lazy(() => import('pages/Home/Home.js'));
-const Catalog = lazy(() => import('pages/Catalog/Catalog.js'));
-const Favorites = lazy(() => import('pages/Favorites/Favorites.js'));
+const Home = lazy(() => import('Pages/Home/Home.js'));
+const Catalog = lazy(() => import('Pages/Catalog/Catalog.js'));
+const Favorites = lazy(() => import('Pages/Favorites/Favorites.js'));
 
 export const App = () => {
   const dispatch = useDispatch();
