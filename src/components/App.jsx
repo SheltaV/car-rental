@@ -1,31 +1,23 @@
-import { Route, Routes } from 'react-router-dom';
-import { Layout } from './Layout';
-import NotFound from 'Pages/NotFound';
-import { useDispatch } from 'react-redux';
-import { lazy, useEffect } from 'react';
-import { getAdverts } from '../redux/operations';
-
-const Home = lazy(() => import('Pages/Home/Home.js'));
-const Catalog = lazy(() => import('Pages/Catalog/Catalog.js'));
-const Favorites = lazy(() => import('Pages/Favorites/Favorites.js'));
+import { SharedLayout } from "./SharedLayout";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { GlobalStyle } from "./GlobalStyle";
+import { MainPage } from "Pages/Home/Home";
+import { CatalogPage } from "Pages/Catalog/Catalog";
+import { Favorites } from "Pages/Favorites/Favorites";
 
 export const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAdverts());
-  }, [dispatch]);
-
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/catalog" element={<Catalog />} />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<MainPage />}></Route>
+          <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
+
+      <GlobalStyle />
     </>
   );
 };
